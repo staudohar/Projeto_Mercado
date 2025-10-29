@@ -39,7 +39,9 @@ p {
 
 /* ===== Botões ===== */
 button {
-    width: 350px;
+    max-width: 350px; /* Largura máxima */
+    width: 90%; /* Largura relativa para celular */
+    box-sizing: border-box; /* Para padding não estourar a largura */
     padding: 15px 20px;
     background: linear-gradient(135deg, #064e3b, #0b664a);
     color: #fff;
@@ -62,7 +64,9 @@ button:hover {
 
 /* ===== Inputs ===== */
 input {
-    width: 350px;
+    max-width: 350px; /* Largura máxima */
+    width: 90%; /* Largura relativa para celular */
+    box-sizing: border-box; /* Para padding não estourar a largura */
     padding: 15px 20px;
     background-color: #eaf8ed;
     border: 2px solid #0b664a;
@@ -270,15 +274,11 @@ li {
 /* ===== NOVO: Estilos do Autocomplete Customizado ===== */
 
 /* 1. O container que centraliza e posiciona */
-/* 1. O container que centraliza e posiciona */
 .autocomplete-container {
     position: relative;
-    /* Largura dos inputs (350px) 
-      + padding (25px * 2 = 50px) 
-      + borda (2px * 2 = 4px) 
-      = 404px 
-    */
-    width: 390px; 
+    max-width: 390px; /* Largura máxima */
+    width: 90%; /* Largura relativa */
+    box-sizing: border-box;
     margin: 10px auto 20px auto; /* Mesma margem dos inputs */
 }
 /* 2. Garante que o input dentro dele ocupe 100% */
@@ -346,8 +346,9 @@ ul#lista li {
     /* Melhora o espaçamento e visual de item de lista */
     padding-left: 20px; 
     padding-right: 20px;
-    width: auto; /* Deixa o 'li' crescer com o conteúdo */
-    max-width: 450px; /* Limite de largura */
+    width: 90%; /* Largura relativa */
+    max-width: 500px; /* Largura máxima */
+    box-sizing: border-box;
     margin: 10px auto; /* Centraliza o 'li' na página */
     border-bottom: 1px dashed #c8e6c9; /* Linha separadora sutil */
     padding-bottom: 10px;
@@ -371,4 +372,60 @@ ul#lista li .item-historico {
     margin-top: 4px;
     display: block;
     text-align: left;
+}
+
+
+/* ===== Media Queries para Responsividade ===== */
+
+@media (max-width: 600px) {
+
+    /* Ajusta o tamanho da fonte dos títulos */
+    h1 {
+        font-size: 1.8em;
+        margin-top: 20px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    /* Ajusta o padding do grid de histórico */
+    #comprasAnteriores {
+        padding: 0 10px;
+        grid-template-columns: 1fr; /* Coluna única em telas muito pequenas */
+    }
+
+    /* Ajusta o padding dos cards de histórico */
+    .compra-anterior {
+        padding: 15px;
+    }
+    
+    /* Ajusta o botão 'Total' flutuante */
+    #tot {
+        width: 90px;
+        height: 90px;
+        font-size: 1em;
+        bottom: 15px;
+        right: 15px;
+        padding: 5px; /* Adiciona padding interno */
+        box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+    }
+
+    /* Na página da lista, adiciona um padding-bottom 
+       para que os últimos itens não fiquem escondidos 
+       atrás do botão 'Total' 
+    */
+    body.pagina-lista {
+        /* Adiciona um 'espaçador' no final da página 
+           com altura igual ao botão de total + margem 
+        */
+        padding-bottom: 120px; /* (90px de altura + 15px de margem + 15px extra) */
+    }
+
+    /* Adiciona um padding-bottom geral para 
+       outras páginas terem um 'respiro'
+    */
+    body {
+        padding-bottom: 30px;
+    }
 }
