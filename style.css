@@ -1,0 +1,374 @@
+/* ===== Estilo Global ===== */
+html, body {
+    font-family: 'Segoe UI', Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(180deg, #e7e3d8 0%, #eef8f1 100%);
+    color: #064e3b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* ===== Títulos ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+h1, h2 {
+    text-align: center;
+    letter-spacing: 1px;
+    color: #064e3b;
+    text-shadow: 1px 1px 2px rgba(0, 50, 0, 0.15);
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4em;
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 10px;
+}
+
+p {
+    color: #064e3b;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* ===== Botões ===== */
+button {
+    width: 350px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #064e3b, #0b664a);
+    color: #fff;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 40, 0, 0.25);
+}
+
+button:hover {
+    transform: scale(1.03);
+    background: linear-gradient(135deg, #0b664a, #0f7b57);
+    box-shadow: 0 6px 12px rgba(0, 70, 0, 0.3);
+}
+
+/* ===== Inputs ===== */
+input {
+    width: 350px;
+    padding: 15px 20px;
+    background-color: #eaf8ed;
+    border: 2px solid #0b664a;
+    border-radius: 10px;
+    color: #064e3b;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    transition: 0.25s;
+    box-shadow: 0 2px 6px rgba(0, 50, 0, 0.1);
+}
+
+input:focus {
+    outline: none;
+    background-color: #eae9e2;
+    box-shadow: 0 0 8px #0f7b57;
+}
+
+/* ===== Container ===== */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* ===== Lista ===== */
+li {
+    display: flex;
+    justify-content: center;
+    color: #064e3b;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* ===== Círculo Decorativo ===== */
+.circulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #064e3b, #0b664a);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 60, 0, 0.25);
+    margin: 10px auto;
+    transition: 0.25s;
+}
+
+.circulo:hover {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 80, 0, 0.3);
+}
+
+/* ===== Caixa Retangular ===== */
+.caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 55px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #064e3b, #0b664a);
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px auto;
+    box-shadow: 0 5px 12px rgba(0, 50, 0, 0.25);
+    transition: all 0.25s;
+}
+
+.caixa:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 80, 0, 0.3);
+}
+
+/* ===== Total Fixo no Canto Inferior Direito ===== */
+#tot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #064e3b, #0b664a);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 60, 0, 0.3);
+    transition: transform 0.25s, box-shadow 0.25s;
+    z-index: 1000;
+}
+
+#tot:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 80, 0, 0.4);
+}
+
+
+/* === INÍCIO: ESTILOS 'comprasAnteriores' === */
+
+/* --- MODIFICAÇÃO: Adicionado o grid de volta --- */
+#comprasAnteriores {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px; /* Espaço entre os cartões */
+    padding: 0 20px; /* Espaçamento lateral para o grid */
+    margin-bottom: 20px; /* Espaço na parte inferior */
+}
+
+.compra-anterior {
+    /* --- MODIFICAÇÃO: Removido 'width: 350px' --- */
+    /* --- MODIFICAÇÃO: Removido 'margin: 20px auto' --- */
+    padding: 20px;
+    background-color: #eaf8ed; /* Mesmo fundo dos inputs */
+    border: 2px solid #0b664a; /* Mesma borda dos inputs */
+    border-radius: 10px; /* Mesma borda dos inputs */
+    box-shadow: 0 2px 6px rgba(0, 50, 0, 0.1);
+    position: relative; /* Para o botão de excluir */
+    text-align: left; /* Para anular o <p> global */
+}
+
+.compra-anterior strong {
+    font-size: 1.2em;
+    color: #064e3b;
+}
+
+.compra-anterior small {
+    color: #0b664a;
+    display: block;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.compra-anterior ul {
+    list-style-type: disc; /* Lista normal */
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Anula o 'li' global centrado */
+.compra-anterior li {
+    display: list-item;
+    justify-content: flex-start;
+    color: #064e3b;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.compra-anterior p {
+    text-align: left;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/* Botão de excluir padronizado com o tema */
+.btn-excluir {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    
+    /* Tamanho e Forma */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+    /* Cor do Tema */
+    background: #064e3b; /* Verde principal */
+    color: white;
+    
+    /* Alinhamento */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Anulando estilos globais de 'button' */
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-excluir:hover {
+    background: #c0392b; /* Vermelho ao passar o mouse para indicar perigo */
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Anula sombra global */
+}
+
+/* ===== NOVO: Estilos do Autocomplete Customizado ===== */
+
+/* 1. O container que centraliza e posiciona */
+/* 1. O container que centraliza e posiciona */
+.autocomplete-container {
+    position: relative;
+    /* Largura dos inputs (350px) 
+      + padding (25px * 2 = 50px) 
+      + borda (2px * 2 = 4px) 
+      = 404px 
+    */
+    width: 390px; 
+    margin: 10px auto 20px auto; /* Mesma margem dos inputs */
+}
+/* 2. Garante que o input dentro dele ocupe 100% */
+.autocomplete-container input#prod {
+    margin: 0;
+    width: 100%;
+    /* Essencial para o padding não 'quebrar' a largura */
+    box-sizing: border-box; 
+}
+
+/* 3. A "CAIXA" de resultados (o dropdown) */
+.autocomplete-items {
+    position: absolute;
+    top: calc(100% + 2px); /* Logo abaixo do input */
+    left: 0;
+    right: 0;
+    
+    background-color: #eaf8ed; /* Fundo verde-claro (igual ao input) */
+    border: 2px solid #0b664a; /* Borda verde (igual ao input) */
+    border-top: none; /* Remove a borda que colaria no input */
+    border-radius: 0 0 10px 10px; /* Arredonda só os cantos de baixo */
+    
+    box-shadow: 0 8px 10px rgba(0, 50, 0, 0.15);
+    z-index: 100;
+    max-height: 220px; /* Limita a altura da caixa */
+    overflow-y: auto; /* Adiciona scroll se a lista for longa */
+    display: none; /* Começa escondida */
+}
+
+/* 4. Cada item de sugestão dentro da caixa */
+.autocomplete-items div {
+    padding: 12px 20px;
+    color: #064e3b;
+    cursor: pointer;
+    text-align: left; /* Alinha o texto dos itens à esquerda */
+    border-top: 1px dashed #c8e6c9; /* Linha separadora sutil */
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    font-size: 0.95em;
+}
+
+.autocomplete-items div:first-child {
+    border-top: none; /* Remove a linha do primeiro item */
+}
+
+/* 5. Efeito hover no item da lista */
+.autocomplete-items div:hover {
+    background-color: #d1e8d5; /* Verde mais claro no hover */
+}
+
+/* 6. Estilo para o texto digitado (bônus) */
+.autocomplete-items div strong {
+    color: #0f7b57;
+    font-weight: bold;
+}
+
+/* ===== NOVO: Estilos do Item da Lista com Histórico ===== */
+
+/* Sobrescreve o estilo 'li' global apenas para a 
+  lista de compras atual (ul com id="lista") 
+*/
+ul#lista li {
+    flex-direction: column; /* Empilha o principal e o histórico */
+    align-items: flex-start; /* Alinha tudo à esquerda */
+    
+    /* Melhora o espaçamento e visual de item de lista */
+    padding-left: 20px; 
+    padding-right: 20px;
+    width: auto; /* Deixa o 'li' crescer com o conteúdo */
+    max-width: 450px; /* Limite de largura */
+    margin: 10px auto; /* Centraliza o 'li' na página */
+    border-bottom: 1px dashed #c8e6c9; /* Linha separadora sutil */
+    padding-bottom: 10px;
+}
+
+/* O texto principal (Produto: R$ Valor) */
+ul#lista li .item-principal {
+    font-size: 1.1em;
+    font-weight: 500; /* Um pouco mais de peso */
+    color: #064e3b; /* Cor padrão */
+    /* Remove estilos flex (caso herdados) */
+    display: block; 
+    text-align: left;
+}
+
+/* O texto de ajuda (histórico) */
+ul#lista li .item-historico {
+    font-size: 0.85em;
+    font-style: italic;
+    color: #555; /* Cinza escuro, menos ênfase */
+    margin-top: 4px;
+    display: block;
+    text-align: left;
+}

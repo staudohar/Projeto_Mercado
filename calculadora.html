@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>MERCADO DO MÔ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <h1>CALCULADORA DO MÔ <i class="fa-solid fa-calculator"></i></h1>
+
+    <h2>Quantidade do produto em ml/g</h2>
+    <div class="container">
+        <input type="number" id="quantidade" placeholder="Quantidade">
+    </div>
+
+    <h2>Valor do produto</h2>
+    <div class="container">
+        <input type="number" id="valor" placeholder="Valor em R$">
+    </div>
+
+    <p>
+        <button onclick="funcaoCalcular()">Calcular</button>
+    </p>
+
+    <h2>Resultados (escolha sempre o menor valor):</h2>
+    <ol id="precos"></ol>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Compras Anteriores <i class="fa-solid fa-calendar-week"></i></title>  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-compras">
+
+<h1> HISTÓRICO DO MÔ <i class="fa-solid fa-calendar-week"></i></h1>
+  
+  <div id="comprasAnteriores"></div>
+
+  <script>
+    window.onload = carregarCompras;
+
+    function carregarCompras() {
+      const container = document.getElementById("comprasAnteriores");
+      container.innerHTML = "";
+
+      const historico = JSON.parse(localStorage.getItem("compras")) || [];
+
+      if (historico.length === 0) {
+        container.innerHTML = "<p>Nenhuma compra anterior encontrada.</p>";
+        return;
+      }
+
+      historico.forEach((compra, index) => {
+        const div = document.createElement("div");
+        div.className = "compra-anterior";
+
+        let listaItens = compra.itens
+          .map(item => `<li>${item.produto}: R$ ${item.valor.toFixed(2)}</li>`)
+          .join("");
+
+        div.innerHTML = `
+          <button 
+            class="btn-excluir" 
+            onclick="excluirCompra(${index})" 
+            title="Excluir compra"
+          >
+            <i class="fa-solid fa-trash"></i>
+          </button>
+          
+          <strong>${compra.nome}</strong><br>
+          <small>${compra.data}</small>
+          <ul>${listaItens}</ul>
+          <p><b>Total:</b> R$ ${compra.total.toFixed(2)}</p>
+        `;
+
+        container.appendChild(div);
+      });
+    }
+
+    function excluirCompra(index) {
+      if (!confirm("Tem certeza que deseja excluir esta compra?")) return;
+
+      let historico = JSON.parse(localStorage.getItem("compras")) || [];
+      historico.splice(index, 1); 
+      localStorage.setItem("compras", JSON.stringify(historico));
+
+      carregarCompras(); 
+    }
+  </script>
+</body>
+</html>

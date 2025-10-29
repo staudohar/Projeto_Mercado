@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>MERCADO DO MÔ </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body> 
+
+    <h1>LISTA DO MÔ <i class="fa-solid fa-list"></i></h1> 
+
+<div class="autocomplete-container">
+    <input type="text" id="prod" placeholder="Produto" autocomplete="off">
+    <div id="autocomplete-results" class="autocomplete-items"></div> </div>
+
+<p><input type="number" id="val" placeholder="Valor"></p>
+<p><button onclick="adicionarLista()">Adicionar</button></p>
+<p><button onclick="finalizarCompra()">Finalizar Compra</button></p>
+
+<ul id="lista"></ul>
+
+<p id="tot">Total: R$ 0.00</p>
+
+</body>
+</html>
