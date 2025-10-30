@@ -390,6 +390,7 @@ ul#lista li .item-historico {
 
     h3 {
         font-size: 1.0em;
+        text-align: center;
     }
     
     /* Ajusta o padding do grid de histórico */
@@ -431,4 +432,17 @@ ul#lista li .item-historico {
     body {
         padding-bottom: 30px;
     }
+}
+
+div {
+  width: 50%; /* ou outro valor de largura */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.autocomplete-container{
+      width: 50%; /* ou outro valor de largura */
+  margin-left: auto;
+  margin-right: auto;
+
 }
