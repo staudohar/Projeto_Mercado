@@ -387,6 +387,10 @@ ul#lista li .item-historico {
     h2 {
         font-size: 1.3em;
     }
+
+    h3 {
+        font-size: 1.0em;
+    }
     
     /* Ajusta o padding do grid de histórico */
     #comprasAnteriores {
