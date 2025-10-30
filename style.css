@@ -276,10 +276,10 @@ li {
 /* 1. O container que centraliza e posiciona */
 .autocomplete-container {
     position: relative;
-    max-width: 390px; /* Largura máxima */
-    width: 90%; /* Largura relativa */
-    box-sizing: border-box;
-    margin: 10px auto 20px auto; /* Mesma margem dos inputs */
+    max-width: 390px; /* Largura máxima (era 390px fixo) */
+    width: 90%;     /* Largura relativa para centralizar bem no celular */
+    box-sizing: border-box; /* Para o padding não 'estourar' a largura */
+    margin: 10px auto 20px auto; /* 'auto' nas laterais faz a centralização */
 }
 /* 2. Garante que o input dentro dele ocupe 100% */
 .autocomplete-container input#prod {
@@ -347,7 +347,7 @@ ul#lista li {
     padding-left: 20px; 
     padding-right: 20px;
     width: 90%; /* Largura relativa */
-    max-width: 500px; /* Largura máxima */
+    max-width: 450px; /* Limite de largura */
     box-sizing: border-box;
     margin: 10px auto; /* Centraliza o 'li' na página */
     border-bottom: 1px dashed #c8e6c9; /* Linha separadora sutil */
@@ -373,7 +373,6 @@ ul#lista li .item-historico {
     display: block;
     text-align: left;
 }
-
 
 /* ===== Media Queries para Responsividade ===== */
 
